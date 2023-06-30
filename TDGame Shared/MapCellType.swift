@@ -18,10 +18,10 @@ enum MapCellType: Int, Decodable {
 extension MapCellType {
     var backgroud: SKColor {
         switch self {
-        case .road: return SKColor(white: 0, alpha: 0.2)
+        case .road: return SKColor(white: 1, alpha: 0.2)
         case .startPoint: return .yellow
         case .endPoint: return .red
-        case .empty: return .white
+        case .empty: return .black
         }
     }
 }

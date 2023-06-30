@@ -63,7 +63,7 @@ class Map: SKNode {
                 
                 for i in 0..<cells.count {
                     for j in 0..<cells[i].count {
-                        let node = MapCell(type: cells[i][j], isRoad: path.contains(where: { $0 == (i, j) }))
+                        let node = MapCellNode(type: cells[i][j], isRoad: path.contains(where: { $0 == (i, j) }))
                         node.position = CGPoint(x: j * 72, y: (cells.count - 1 - i) * 72)
                         addChild(node)
                     }
@@ -120,7 +120,11 @@ extension Map {
                 curPos = pre[curPos.0][curPos.1]
             }
             
-            return res.reversed()
+            res.append(startPoint)
+            
+            res = res.reversed()
+            res.append(endPoint)
+            return res
         }
         return []
     }
@@ -138,5 +142,28 @@ extension Map {
         } else {
             return false
         }
+    }
+    
+    func spawn() {
+        let path = bfs().map { i, j in
+            CGPoint(x: j * 72 + 36, y: (cells.count - 1 - i) * 72 + 36)
+        }
+        let enemy = EnemyNode(path: path)
+        enemy.position = path[0]
+        addChild(enemy)
+        
+        var tos: [SKAction] = []
+        for i in 0..<path.count {
+            if i >= 1 {
+                tos.append( SKAction.run {
+                })
+                tos.append(SKAction.move(to: path[i], duration: 0.1))
+            }
+        }
+        tos.append(SKAction.run {
+            // 到终点
+        })
+        tos.append(SKAction.removeFromParent())
+        enemy.run(SKAction.sequence(tos))
     }
 }

@@ -28,8 +28,15 @@
 		49504DEE2A4C59A100B93E90 /* map1.json in Resources */ = {isa = PBXBuildFile; fileRef = 49504DEC2A4C59A100B93E90 /* map1.json */; };
 		49504DF02A4C5A0000B93E90 /* MapCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DEF2A4C5A0000B93E90 /* MapCellType.swift */; };
 		49504DF12A4C5A0000B93E90 /* MapCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DEF2A4C5A0000B93E90 /* MapCellType.swift */; };
-		49504DF42A4C5C2E00B93E90 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DF32A4C5C2E00B93E90 /* MapCell.swift */; };
-		49504DF52A4C5C2E00B93E90 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DF32A4C5C2E00B93E90 /* MapCell.swift */; };
+		49504DF42A4C5C2E00B93E90 /* MapCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DF32A4C5C2E00B93E90 /* MapCellNode.swift */; };
+		49504DF52A4C5C2E00B93E90 /* MapCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DF32A4C5C2E00B93E90 /* MapCellNode.swift */; };
+		49504DF72A4D451A00B93E90 /* EnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DF62A4D451A00B93E90 /* EnemyNode.swift */; };
+		49504DF82A4D451A00B93E90 /* EnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DF62A4D451A00B93E90 /* EnemyNode.swift */; };
+		49504DFA2A4DE1C800B93E90 /* UIPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DF92A4DE1C800B93E90 /* UIPanel.swift */; };
+		49504DFB2A4DE1C800B93E90 /* UIPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DF92A4DE1C800B93E90 /* UIPanel.swift */; };
+		49F2E1362A4E8EA900C1F4DA /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2E1352A4E8EA900C1F4DA /* Enemy.swift */; };
+		49F2E1382A4F10BA00C1F4DA /* TowerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2E1372A4F10BA00C1F4DA /* TowerNode.swift */; };
+		49F2E1392A4F10BA00C1F4DA /* TowerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2E1372A4F10BA00C1F4DA /* TowerNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +57,11 @@
 		49504DE92A4C58E500B93E90 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		49504DEC2A4C59A100B93E90 /* map1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = map1.json; sourceTree = "<group>"; };
 		49504DEF2A4C5A0000B93E90 /* MapCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCellType.swift; sourceTree = "<group>"; };
-		49504DF32A4C5C2E00B93E90 /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
+		49504DF32A4C5C2E00B93E90 /* MapCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCellNode.swift; sourceTree = "<group>"; };
+		49504DF62A4D451A00B93E90 /* EnemyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyNode.swift; sourceTree = "<group>"; };
+		49504DF92A4DE1C800B93E90 /* UIPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPanel.swift; sourceTree = "<group>"; };
+		49F2E1352A4E8EA900C1F4DA /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		49F2E1372A4F10BA00C1F4DA /* TowerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +95,7 @@
 		49504DB52A4B462D00B93E90 /* TDGame Shared */ = {
 			isa = PBXGroup;
 			children = (
+				49F2E1342A4E8E9800C1F4DA /* Entity */,
 				49504DF22A4C5C1700B93E90 /* Node */,
 				49504DB62A4B462D00B93E90 /* Actions.sks */,
 				49504DB72A4B462D00B93E90 /* GameScene.sks */,
@@ -130,9 +142,20 @@
 		49504DF22A4C5C1700B93E90 /* Node */ = {
 			isa = PBXGroup;
 			children = (
-				49504DF32A4C5C2E00B93E90 /* MapCell.swift */,
+				49504DF32A4C5C2E00B93E90 /* MapCellNode.swift */,
+				49504DF62A4D451A00B93E90 /* EnemyNode.swift */,
+				49504DF92A4DE1C800B93E90 /* UIPanel.swift */,
+				49F2E1372A4F10BA00C1F4DA /* TowerNode.swift */,
 			);
 			path = Node;
+			sourceTree = "<group>";
+		};
+		49F2E1342A4E8E9800C1F4DA /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				49F2E1352A4E8EA900C1F4DA /* Enemy.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,11 +266,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				49504DDD2A4B462E00B93E90 /* GameScene.swift in Sources */,
+				49504DF72A4D451A00B93E90 /* EnemyNode.swift in Sources */,
 				49504DC42A4B462E00B93E90 /* GameViewController.swift in Sources */,
-				49504DF42A4C5C2E00B93E90 /* MapCell.swift in Sources */,
+				49504DF42A4C5C2E00B93E90 /* MapCellNode.swift in Sources */,
 				49504DEA2A4C58E500B93E90 /* Map.swift in Sources */,
+				49F2E1362A4E8EA900C1F4DA /* Enemy.swift in Sources */,
 				49504DC22A4B462E00B93E90 /* AppDelegate.swift in Sources */,
+				49504DFA2A4DE1C800B93E90 /* UIPanel.swift in Sources */,
 				49504DF02A4C5A0000B93E90 /* MapCellType.swift in Sources */,
+				49F2E1382A4F10BA00C1F4DA /* TowerNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,10 +283,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				49504DDE2A4B462E00B93E90 /* GameScene.swift in Sources */,
+				49504DF82A4D451A00B93E90 /* EnemyNode.swift in Sources */,
 				49504DD42A4B462E00B93E90 /* GameViewController.swift in Sources */,
-				49504DF52A4C5C2E00B93E90 /* MapCell.swift in Sources */,
+				49504DF52A4C5C2E00B93E90 /* MapCellNode.swift in Sources */,
 				49504DEB2A4C58E500B93E90 /* Map.swift in Sources */,
+				49F2E1392A4F10BA00C1F4DA /* TowerNode.swift in Sources */,
 				49504DD22A4B462E00B93E90 /* AppDelegate.swift in Sources */,
+				49504DFB2A4DE1C800B93E90 /* UIPanel.swift in Sources */,
 				49504DF12A4C5A0000B93E90 /* MapCellType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
