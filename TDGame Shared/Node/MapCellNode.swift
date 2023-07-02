@@ -12,13 +12,13 @@ class MapCellNode: SKNode {
     let type: MapCellType
     let isRoad: Bool
     
-    private static let size: Double = 72
+    static let size: Double = 72
     private static let padding: Double = 4
     
     private let path: CGMutablePath
     private var node: SKShapeNode
     
-    private var tower: TowerNode?
+    private var tower: TowerBaseNode?
     
     required init?(coder aDecoder: NSCoder) {
         return nil
@@ -34,13 +34,16 @@ class MapCellNode: SKNode {
         node.fillColor = type.backgroud
         super.init()
         self.name = "MapCell"
+        self.zPosition = ZIndex.map
         addChild(node)
     }
     
     func constructTower() {
-        let tower = TowerNode()
-        tower.position = CGPoint(x: 36, y: 36)
-        addChild(tower)
+        let tower = TowerBaseNode(color: NSColor.purple.cgColor)
+        let offset = Double(MapCellNode.size / 2)
+        tower.position = CGPoint(x: self.position.x + offset, y: self.position.y + offset)
+        parent!.addChild(tower)
+        tower.zPosition = 100
         self.tower = tower
     }
     
